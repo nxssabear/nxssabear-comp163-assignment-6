@@ -42,5 +42,30 @@ for i in contacts: #process each contact
 
     final_contacts.append([name, phone, email, address]) #add  contact parts to final list
 
+print("=== CONTACT DIRECTORY ===")
 
+print()
 
+for j in final_contacts: #print each contact
+    print(f"CONTACT {count}:")
+    print(f"Name:     {j[0]}")
+    print(f"Phone:    {j[1]}")
+    print(f"Email:    {j[2]}")
+    print(f"Address:  {j[3]}")
+    print()
+
+    count += 1
+
+print("=== DIRECTORY SUMMARY ===")
+print(f"Total contacts processed: {count - 1}")
+
+print()
+
+print("=== FORMATTED FOR PRINTING ===")
+
+for a in final_contacts: #print each contact formatted for printing
+   name_parts = a[0].split()
+   last_name = name_parts[-1]
+   first_names = " ".join(name_parts[0:-1]) #handle multiple first names
+
+   print(f"{last_name}, {first_names:<25}{a[1]:<20}{a[2]}")
