@@ -1,5 +1,4 @@
 # -comp163-assignment-6
-# VanessaG_assignment_6.py 
 
 # Assignment 6: Contact Information Formatter 
 ## Author
@@ -19,7 +18,7 @@ A Python based program that demonstrates mastery of string methods for data clea
 - .isdigit() - Extract phone number digits .isalpha() - Identify state abbreviations 
 - F-string formatting with alignment for precise output
 
-No AI assisstance was used for this assingment, but deeper/clearer explanation on instructions, AI was used.
+No AI assisstance was used for code on this assingment, but deeper/clearer explanation on instructions is where AI was used.
 
 ## How to Run
 python VanessaG_assignment_5.py
