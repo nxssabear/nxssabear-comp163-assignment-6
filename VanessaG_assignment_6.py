@@ -20,7 +20,15 @@ final_contacts = []
 
 for i in contacts: #process each contact
     name = " ".join(i[0].strip().split()).title()
-    
+    phone = i[1]
+
+    digits_only = "" #extract digits from phone number
+    for char in phone:
+          if char.isdigit():       
+            digits_only += char
+
+    phone = (f"({digits_only[0:3]}) {digits_only[3:6]}-{digits_only[6:]}") #format phone number
+
     email = i[2].strip().lower() #format email
 
     address = i[3].strip().split() #split address into parts
@@ -33,4 +41,5 @@ for i in contacts: #process each contact
             new_address.append(dress.title())
 
     address = " ".join(new_address) #join address parts back together
+
 
