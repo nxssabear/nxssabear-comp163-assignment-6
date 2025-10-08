@@ -29,8 +29,6 @@ for i in contacts: #process each contact
 
     phone = (f"({digits_only[0:3]}) {digits_only[3:6]}-{digits_only[6:]}") #format phone number
 
-    email = i[2].strip().lower() #format email
-
     address = i[3].strip().split() #split address into parts
     new_address = []
 
@@ -41,5 +39,8 @@ for i in contacts: #process each contact
             new_address.append(dress.title())
 
     address = " ".join(new_address) #join address parts back together
+
+    final_contacts.append([name, phone, email, address]) #add  contact parts to final list
+
 
 
