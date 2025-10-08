@@ -1,6 +1,5 @@
 #Assignment 6
 #No AI assistance was used in the completion of this assignment.
-
 contacts = [] #list to hold contact information
 count = 1
 
@@ -14,8 +13,9 @@ while True: #collect contact information
         break
     
    else:
-        parts = info.split("|") 
+        parts = info.split("|")
         contacts.append(parts)
+    
 final_contacts = []
 
 for i in contacts: #process each contact
@@ -27,12 +27,14 @@ for i in contacts: #process each contact
           if char.isdigit():       
             digits_only += char
 
-    phone = (f"({digits_only[0:3]}) {digits_only[3:6]}-{digits_only[6:]}") #format phone number
+    phone = (f"({digits_only[0:3]}) {digits_only[3:6]}-{digits_only[6:]}") 
+        
+    email = i[2].strip().lower() 
 
     address = i[3].strip().split() #split address into parts
     new_address = []
 
-    for dress in address: #format address
+    for dress in address:  #format address
         if len(dress) == 2 and dress.isalpha():
             new_address.append(dress.upper())
         else:
@@ -40,7 +42,8 @@ for i in contacts: #process each contact
 
     address = " ".join(new_address) #join address parts back together
 
-    final_contacts.append([name, phone, email, address]) #add  contact parts to final list
+    final_contacts.append([name, phone, email, address]) #add contact parts to final list
+
 
 print("=== CONTACT DIRECTORY ===")
 
@@ -69,3 +72,4 @@ for a in final_contacts: #print each contact formatted for printing
    first_names = " ".join(name_parts[0:-1]) #handle multiple first names
 
    print(f"{last_name}, {first_names:<25}{a[1]:<20}{a[2]}")
+
