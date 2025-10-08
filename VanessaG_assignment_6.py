@@ -16,3 +16,21 @@ while True: #collect contact information
    else:
         parts = info.split("|") 
         contacts.append(parts)
+final_contacts = []
+
+for i in contacts: #process each contact
+    name = " ".join(i[0].strip().split()).title()
+    
+    email = i[2].strip().lower() #format email
+
+    address = i[3].strip().split() #split address into parts
+    new_address = []
+
+    for dress in address: #format address
+        if len(dress) == 2 and dress.isalpha():
+            new_address.append(dress.upper())
+        else:
+            new_address.append(dress.title())
+
+    address = " ".join(new_address) #join address parts back together
+
